@@ -1,0 +1,45 @@
+<div id="<%= dom_id plant %>" class="w-full my-5 p-5 bg-green-50 rounded-xl shadow-md">
+  <!-- Profile Image -->
+  <% if plant.profile_picture.present? %>
+    <div class="flex justify-center">
+      <%= image_tag plant.profile_picture, class: "h-48 border-4 border-blue-200 object-cover" %>
+    </div>
+  <% end %>
+
+  <!-- Plant Info -->
+  <div>
+    <strong class="block text-blue-800 font-semibold mb-1">Name:</strong>
+    <span class="text-green-700"><%= plant.name %></span>
+  </div>
+
+  <div>
+    <strong class="block text-blue-800 font-semibold mb-1">Species:</strong>
+    <span class="text-green-700"><%= plant.species %></span>
+  </div>
+
+  <div>
+    <strong class="block text-blue-800 font-semibold mb-1">Purchased at:</strong>
+    <span class="text-green-700"><%= plant.purchased_at %></span>
+  </div>
+
+  <%# last watered at %>
+  <% if plant.last_watered_at.present? %>
+    <div>
+      <strong class="block text-blue-800 font-semibold mb-1">Last Watered At:</strong>
+      <span class="text-green-700"><%= plant.last_watered_at %></span>
+    </div>
+  <% end %>
+
+  <% if plant.died_at.present? %>
+    <div>
+      <strong class="block text-blue-800 font-semibold mb-1">Died at:</strong>
+      <span class="text-green-700"><%= plant.died_at %></span>
+    </div>
+  <% end %>
+
+  <% if local_assigns[:buttons] %>
+    <div class="flex justify-between mt-3">
+      <%= buttons %>
+    </div>
+  <% end %>
+</div>

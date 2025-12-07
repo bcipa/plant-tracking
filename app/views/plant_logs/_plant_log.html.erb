@@ -1,0 +1,36 @@
+<div id="<%= dom_id plant_log %>" class="w-fit my-5 p-4 bg-blue-50 rounded-lg shadow-md  border border-green-100">
+  <div>
+    <% if plant_log.image.attached? %>
+      <%= image_tag plant_log.image, class: "w-full max-w-xs rounded-lg border border-green-200 shadow-sm" %>
+    <% else %>
+      <span class="text-gray-500 italic">No image uploaded</span>
+    <% end %>
+  </div>
+
+  <div>
+      <h1 class="text-green-800 font-semibold text-lg">Logged on: <%= plant_log.created_at.strftime("%b %d, %Y %l:%M %p") %></h1>
+  </div>
+
+  <div>
+    <strong class="block text-green-700 text-sm font-semibold mb-1">Plant:</strong>
+    <span class="text-gray-800"><%= plant_log.plant.name %></span>
+    <br>
+    <a href="<%= plant_path(plant_log.plant) %>" class="text-green-600 underline hover:text-green-800 hover:underline">View Plant Details</a>
+
+  </div>
+
+  <div>
+    <strong class="block text-blue-700 text-sm font-semibold mb-1">Watered:</strong>
+    <span class="<%= plant_log.watered? ? 'text-green-600 font-semibold' : 'text-red-500 font-semibold' %>">
+      <%= plant_log.watered? ? "Yes" : "No" %>
+    </span>
+  </div>
+
+
+  <% if local_assigns[:buttons] %>
+    <div class="flex justify-between mt-3">
+      <%= buttons %>
+    </div>
+  <% end %>
+
+</div>

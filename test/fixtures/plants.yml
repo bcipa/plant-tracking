@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  species: MyString
+  purchased_at: 2025-12-07
+  died_at: 2025-12-07
+
+two:
+  name: MyString
+  species: MyString
+  purchased_at: 2025-12-07
+  died_at: 2025-12-07

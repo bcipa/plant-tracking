@@ -1,0 +1,11 @@
+<%=
+  render partial: "plant_box", locals: { plant: plant }
+%>
+
+<%# each plant log %>
+<h2 class="text-2xl font-bold mt-6 mb-4 text-green-700">Plant Logs</h2>
+<% plant.plant_logs.each do |plant_log| %>
+  <div class="mt-4">
+    <%= render partial: "plant_logs/plant_log", locals: { plant_log: plant_log } %>
+  </div>
+<% end %>

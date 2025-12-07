@@ -20,6 +20,7 @@ services:
       POSTGRES_HOST: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
+    user: "${UID}:${GID}"
     volumes:
       - .:/app
 
