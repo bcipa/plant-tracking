@@ -12,7 +12,7 @@ class PlantLogsController < ApplicationController
 
   # GET /plant_logs/new
   def new
-    @plant_log = PlantLog.new
+    @plant_log = PlantLog.new(plant_id: params[:plant_id])
   end
 
   # GET /plant_logs/1/edit

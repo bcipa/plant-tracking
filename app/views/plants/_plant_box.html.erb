@@ -1,4 +1,4 @@
-<div id="<%= dom_id plant %>" class="w-full my-5 p-5 bg-green-50 rounded-xl shadow-md">
+<div id="<%= dom_id plant %>" class="w-full my-5 p-5 bg-green-50 rounded-xl shadow-md flex flex-col gap-2">
   <!-- Profile Image -->
   <% if plant.profile_picture.present? %>
     <div class="flex justify-center">
@@ -22,7 +22,6 @@
     <span class="text-green-700"><%= plant.purchased_at %></span>
   </div>
 
-  <%# last watered at %>
   <% if plant.last_watered_at.present? %>
     <div>
       <strong class="block text-blue-800 font-semibold mb-1">Last Watered At:</strong>
@@ -38,7 +37,8 @@
   <% end %>
 
   <% if local_assigns[:buttons] %>
-    <div class="flex justify-between mt-3">
+    <!-- Push buttons to bottom -->
+    <div class="mt-auto flex justify-between">
       <%= buttons %>
     </div>
   <% end %>

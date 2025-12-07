@@ -12,13 +12,16 @@
 
   <div id="plants" class="flex md:flex-row flex-col gap-4">
     <% if @plants.any? %>
-      <% @plants.each do |plant| %>
-       <%= render partial: "plant_box", locals: { 
-      plant: plant, 
-      buttons: link_to("Show", plant, class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-blue-100 hover:bg-gray-50 inline-block font-medium") 
-    } %>
-
-      <% end %>
+    <% @plants.each do |plant| %>
+      <%= render partial: "plant_box", locals: { 
+        plant: plant, 
+        buttons: (
+          link_to("Show", plant, class: " text-center rounded-md px-3.5 py-2.5 bg-blue-100 hover:bg-gray-50 inline-block font-medium") +
+          tag.br +
+          link_to("Log", new_plant_log_path(plant_id: plant.id), class: " text-center rounded-md px-3.5 py-2.5 bg-green-200 hover:bg-green-300 inline-block font-medium ")
+        )
+      } %>
+    <% end %>
     <% else %>
       <p class="text-center my-10">No plants found.</p>
     <% end %>
