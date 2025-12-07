@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Plant Tracker
 
-Things you may want to cover:
+![An image of the root plant index](public/example.png)
 
-* Ruby version
 
-* System dependencies
+A simple Ruby on Rails + PostgreSQL app to track plants, mostly meant for me to keep track of when the were last watered and progress pics. 
 
-* Configuration
+# Image Exports
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Theres a callback on `PlantLogs` and helpers on the `ImageExporter` service to move the progress pics out of docker to your local filesystem, just update `IMAGE_DIR` and the mounted volume in `docker-compose.yml`. I happen to be running this on a windows machine in wsl.

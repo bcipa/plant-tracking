@@ -20,9 +20,10 @@ services:
       POSTGRES_HOST: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
-    user: "${UID}:${GID}"
+      IMAGE_DIR: /mnt/c/Users/Ben/plants
     volumes:
       - .:/app
+      - /mnt/c/Users/Ben/plants:/mnt/c/Users/Ben/plants:rw
 
 volumes:
   postgres_data: {}
